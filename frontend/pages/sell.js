@@ -1,4 +1,4 @@
-import CreateItem from "../components/CreatItem"
+import CreateItem from "../components/CreateItem"
 
 const Sell = props => (
   <div>

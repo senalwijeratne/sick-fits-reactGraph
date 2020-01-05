@@ -4,12 +4,13 @@ import withData from "../lib/withData"
 import Page from "../components/Page"
 
 class MyApp extends App {
-  static getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
     if (Component.getInitialProps) {
-      pageProps.query = ctx.query
-      return { pageProps }
+      pageProps = await Component.getInitialProps(ctx)
     }
+    pageProps.query = ctx.query
+    return { pageProps }
   }
 
   render() {
