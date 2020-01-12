@@ -56,7 +56,7 @@ const Mutations = {
       info
     })
     // create JWT for the user
-    const token = jwt.sign({ userID: user.id }, process.env.APP_SECRET)
+    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET)
     // set the jwt as a cookie on the response
     ctx.response.cookie("token", token, {
       httpOnly: true,
